@@ -1,0 +1,12 @@
+# Ignore output files
+out*
+OUT*
+*.out
+*.OUT
+*.dat
+# ignore python cache files
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+# ignore Archived files
+Archived/
