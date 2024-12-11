@@ -10,3 +10,8 @@ __pycache__/
 .ipynb_checkpoints/
 # ignore Archived files
 Archived/
+# ignore Test files
+Tests/
+# ignore specific files labeled as "ignore"
+*.ignore
+IGNORE*
