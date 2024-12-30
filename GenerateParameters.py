@@ -163,7 +163,9 @@ def GenParameters(
             writer.writerows(data)
         print("CSV file generated successfully!")
     
-    return pd.DataFrame(data, columns=headers)
+    df = pd.DataFrame(data, columns=headers)
+    
+    return df
 
 
 def getParmRange(
