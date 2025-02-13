@@ -1,0 +1,16 @@
+##
+# nucleosome molecule information file
+##
+
+Name    = nuc
+isPromoter = true
+
+# translational diffusion constants
+D       = [0.0,0.0,0.0] # for chromatin
+
+# rotational diffusion constants
+Dr      = [0.000,0.000,0.000]
+
+# Coordinates, with states below, or
+COM     0.0000    0.0000    0.0000
+ref     0.0000    0.0000    0.0000

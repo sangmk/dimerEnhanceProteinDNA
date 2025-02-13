@@ -1,0 +1,18 @@
+##
+# specific binding sites molecule information file
+##
+
+Name    = S
+isPromoter = true
+
+# translational diffusion constants
+D       = [0.0,0.0,0.0] # for chromatin
+
+# rotational diffusion constants
+Dr      = [0.000,0.000,0.000]
+
+# Coordinates, with states below, or
+COM     0.0000    0.0000    0.0000
+bs      0.3000   -0.4000    0.5000
+re1     0.1000    0.0000    0.0000 # reference points for S+S
+re2    -0.1000    0.0000    0.0000 
