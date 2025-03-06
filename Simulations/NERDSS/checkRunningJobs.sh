@@ -2,6 +2,7 @@ jobsToKill=""
 for pid in `ps -u msang2 | grep nerdss | awk '{print $1}'`
 do 
     echo $pid
+    # exam the histogram_complexes_time.dat file for the pid
     grep "Time (s)" /proc/$pid/cwd/DATA/histogram_complexes_time.dat | tail -n1 
     ETA=`tail -n100 /proc/$pid/cwd/OUTPUT | grep "Estimated end time" | tail -n1 `
     echo $ETA
