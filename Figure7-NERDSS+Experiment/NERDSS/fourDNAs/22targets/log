@@ -1,0 +1,359 @@
+==> 0/OUTPUT <==
+End iteration: 4000000, simulation time: 4.000000e+00 seconds.
+System time: 2025-03-09 22:50:26
+Elapsed time: 77 minutes
+Number of molecules: 386
+Number of complexes: 343
+Total reaction matches: 4697304265
+Avg timestep duration: 1.395495e-03, iterations remaining: 196000001, Time left: 4558 minutes
+Estimated end time: 2025-03-13 02:49:03
+------------------------------------------------- 
+Cannot resolve phi angle for protein 369 in complex 38 relative to protein 15 in complex 15. Final angle: -3.14159. Exiting...
+
+==> 1/OUTPUT <==
+End iteration: 52000000, simulation time: 5.200000e+01 seconds.
+System time: 2025-03-10 08:00:45
+Elapsed time: 628 minutes
+Number of molecules: 386
+Number of complexes: 344
+Total reaction matches: 59693315641
+Avg timestep duration: 5.726149e-04, iterations remaining: 148000001, Time left: 1412 minutes
+Estimated end time: 2025-03-11 07:33:12
+------------------------------------------------- 
+Cannot resolve phi angle for protein 365 in complex 123 relative to protein 14 in complex 341. Final angle: -3.14159. Exiting...
+
+==> 2/OUTPUT <==
+End iteration: 3000000, simulation time: 3.000000e+00 seconds.
+System time: 2025-03-09 22:09:46
+Elapsed time: 37 minutes
+Number of molecules: 386
+Number of complexes: 342
+Total reaction matches: 3516406028
+Avg timestep duration: 7.469400e-04, iterations remaining: 197000001, Time left: 2452 minutes
+Estimated end time: 2025-03-11 15:02:13
+------------------------------------------------- 
+Cannot resolve phi angle for protein 364 in complex 225 relative to protein 18 in complex 18. Final angle: -3.14159. Exiting...
+
+==> 3/OUTPUT <==
+End iteration: 92000000, simulation time: 9.200000e+01 seconds.
+System time: 2025-03-10 13:46:30
+Elapsed time: 973 minutes
+Number of molecules: 386
+Number of complexes: 345
+Total reaction matches: 105384120446
+Avg timestep duration: 5.425117e-04, iterations remaining: 108000001, Time left: 976 minutes
+Estimated end time: 2025-03-11 06:03:01
+------------------------------------------------- 
+Cannot resolve phi angle for protein 375 in complex 344 relative to protein 14 in complex 254. Final angle: -3.14159. Exiting...
+
+==> 4/OUTPUT <==
+End iteration: 5000000, simulation time: 5.000000e+00 seconds.
+System time: 2025-03-09 23:28:49
+Elapsed time: 116 minutes
+Number of molecules: 386
+Number of complexes: 344
+Total reaction matches: 5869984787
+Avg timestep duration: 1.390578e-03, iterations remaining: 195000001, Time left: 4519 minutes
+Estimated end time: 2025-03-13 02:48:12
+------------------------------------------------- 
+Cannot resolve phi angle for protein 369 in complex 340 relative to protein 15 in complex 125. Final angle: -3.14159. Exiting...
+
+==> 5/OUTPUT <==
+End iteration: 10000000, simulation time: 1.000000e+01 seconds.
+System time: 2025-03-09 23:35:34
+Elapsed time: 123 minutes
+Number of molecules: 386
+Number of complexes: 342
+Total reaction matches: 11540620343
+Avg timestep duration: 6.996311e-04, iterations remaining: 190000001, Time left: 2215 minutes
+Estimated end time: 2025-03-11 12:31:04
+------------------------------------------------- 
+Cannot resolve phi angle for protein 385 in complex 341 relative to protein 14 in complex 18. Final angle: -3.14159. Exiting...
+
+==> 6/OUTPUT <==
+End iteration: 68000000, simulation time: 6.800000e+01 seconds.
+System time: 2025-03-10 09:56:20
+Elapsed time: 743 minutes
+Number of molecules: 386
+Number of complexes: 347
+Total reaction matches: 77739052055
+Avg timestep duration: 5.574061e-04, iterations remaining: 132000001, Time left: 1226 minutes
+Estimated end time: 2025-03-11 06:22:37
+------------------------------------------------- 
+Cannot resolve phi angle for protein 365 in complex 340 relative to protein 14 in complex 254. Final angle: -3.14159. Exiting...
+
+==> 7/OUTPUT <==
+End iteration: 28000000, simulation time: 2.800000e+01 seconds.
+System time: 2025-03-10 03:53:23
+Elapsed time: 380 minutes
+Number of molecules: 386
+Number of complexes: 346
+Total reaction matches: 31984368128
+Avg timestep duration: 6.189333e-04, iterations remaining: 172000001, Time left: 1774 minutes
+Estimated end time: 2025-03-11 09:27:40
+------------------------------------------------- 
+Cannot resolve phi angle for protein 385 in complex 8 relative to protein 14 in complex 341. Final angle: -3.14159. Exiting...
+
+==> 8/OUTPUT <==
+Number of molecules: 386
+Number of complexes: 349
+Total reaction matches: 245915222693
+Avg timestep duration: 4.786517e-04, iterations remaining: 1, Time left: 0 minutes
+Estimated end time: 2025-03-11 05:45:44
+------------------------------------------------- 
+------------------------------------------------- 
+End simulation
+End date: 2025-03-11 05:45:44
+	Wall Time: 1.159908e+05 seconds
+
+==> 9/OUTPUT <==
+Number of molecules: 386
+Number of complexes: 349
+Total reaction matches: 238506692512
+Avg timestep duration: 5.312393e-04, iterations remaining: 1, Time left: 0 minutes
+Estimated end time: 2025-03-11 05:20:26
+------------------------------------------------- 
+------------------------------------------------- 
+End simulation
+End date: 2025-03-11 05:20:26
+	Wall Time: 1.144729e+05 seconds
+
+==> 10/OUTPUT <==
+End iteration: 7000000, simulation time: 7.000000e+00 seconds.
+System time: 2025-03-09 23:30:43
+Elapsed time: 118 minutes
+Number of molecules: 386
+Number of complexes: 344
+Total reaction matches: 8217502072
+Avg timestep duration: 7.366183e-04, iterations remaining: 193000001, Time left: 2369 minutes
+Estimated end time: 2025-03-11 15:00:11
+------------------------------------------------- 
+Cannot resolve phi angle for protein 369 in complex 123 relative to protein 15 in complex 225. Final angle: -3.14159. Exiting...
+
+==> 11/OUTPUT <==
+End iteration: 24000000, simulation time: 2.400000e+01 seconds.
+System time: 2025-03-10 03:03:59
+Elapsed time: 331 minutes
+Number of molecules: 386
+Number of complexes: 344
+Total reaction matches: 27850153164
+Avg timestep duration: 6.362471e-04, iterations remaining: 176000001, Time left: 1866 minutes
+Estimated end time: 2025-03-11 10:10:19
+------------------------------------------------- 
+Cannot resolve phi angle for protein 372 in complex 18 relative to protein 18 in complex 254. Final angle: -3.14159. Exiting...
+
+==> 12/OUTPUT <==
+End iteration: 8000000, simulation time: 8.000000e+00 seconds.
+System time: 2025-03-09 23:52:02
+Elapsed time: 139 minutes
+Number of molecules: 386
+Number of complexes: 338
+Total reaction matches: 9351326355
+Avg timestep duration: 6.897271e-04, iterations remaining: 192000001, Time left: 2207 minutes
+Estimated end time: 2025-03-11 12:39:10
+------------------------------------------------- 
+Cannot resolve phi angle for protein 377 in complex 340 relative to protein 15 in complex 254. Final angle: -3.14159. Exiting...
+
+==> 13/OUTPUT <==
+End iteration: 126000000, simulation time: 1.260000e+02 seconds.
+System time: 2025-03-10 19:09:48
+Elapsed time: 1297 minutes
+Number of molecules: 386
+Number of complexes: 346
+Total reaction matches: 145202262594
+Avg timestep duration: 5.348113e-04, iterations remaining: 74000001, Time left: 659 minutes
+Estimated end time: 2025-03-11 06:09:24
+------------------------------------------------- 
+Cannot resolve phi angle for protein 385 in complex 341 relative to protein 14 in complex 2. Final angle: -3.14159. Exiting...
+
+==> 14/OUTPUT <==
+End iteration: 21000000, simulation time: 2.100000e+01 seconds.
+System time: 2025-03-10 01:53:29
+Elapsed time: 260 minutes
+Number of molecules: 386
+Number of complexes: 343
+Total reaction matches: 24123113147
+Avg timestep duration: 6.728248e-04, iterations remaining: 179000001, Time left: 2007 minutes
+Estimated end time: 2025-03-11 11:20:45
+------------------------------------------------- 
+Cannot resolve phi angle for protein 383 in complex 148 relative to protein 15 in complex 225. Final angle: -3.14159. Exiting...
+
+==> 15/OUTPUT <==
+End iteration: 55000000, simulation time: 5.500000e+01 seconds.
+System time: 2025-03-10 07:52:32
+Elapsed time: 619 minutes
+Number of molecules: 386
+Number of complexes: 346
+Total reaction matches: 63259474855
+Avg timestep duration: 5.888898e-04, iterations remaining: 145000001, Time left: 1423 minutes
+Estimated end time: 2025-03-11 07:35:41
+------------------------------------------------- 
+Cannot resolve phi angle for protein 385 in complex 344 relative to protein 14 in complex 225. Final angle: -3.14159. Exiting...
+
+==> 16/OUTPUT <==
+Number of molecules: 386
+Number of complexes: 345
+Total reaction matches: 234470206342
+Avg timestep duration: 5.261306e-04, iterations remaining: 1, Time left: 0 minutes
+Estimated end time: 2025-03-11 05:21:02
+------------------------------------------------- 
+------------------------------------------------- 
+End simulation
+End date: 2025-03-11 05:21:02
+	Wall Time: 1.145087e+05 seconds
+
+==> 17/OUTPUT <==
+End iteration: 13000000, simulation time: 1.300000e+01 seconds.
+System time: 2025-03-10 01:00:11
+Elapsed time: 207 minutes
+Number of molecules: 386
+Number of complexes: 343
+Total reaction matches: 15221284150
+Avg timestep duration: 7.060598e-04, iterations remaining: 187000001, Time left: 2200 minutes
+Estimated end time: 2025-03-11 13:40:44
+------------------------------------------------- 
+Cannot resolve phi angle for protein 372 in complex 125 relative to protein 18 in complex 225. Final angle: -3.14159. Exiting...
+
+==> 18/OUTPUT <==
+Number of molecules: 386
+Number of complexes: 346
+Total reaction matches: 229617621383
+Avg timestep duration: 5.195216e-04, iterations remaining: 1, Time left: 0 minutes
+Estimated end time: 2025-03-11 04:46:53
+------------------------------------------------- 
+------------------------------------------------- 
+End simulation
+End date: 2025-03-11 04:46:53
+	Wall Time: 1.124597e+05 seconds
+
+==> 19/OUTPUT <==
+End iteration: 8000000, simulation time: 8.000000e+00 seconds.
+System time: 2025-03-10 00:02:25
+Elapsed time: 149 minutes
+Number of molecules: 386
+Number of complexes: 343
+Total reaction matches: 9318438730
+Avg timestep duration: 6.852433e-04, iterations remaining: 192000001, Time left: 2192 minutes
+Estimated end time: 2025-03-11 12:35:12
+------------------------------------------------- 
+Cannot resolve phi angle for protein 372 in complex 18 relative to protein 18 in complex 254. Final angle: -3.14159. Exiting...
+
+==> 20/OUTPUT <==
+Number of molecules: 386
+Number of complexes: 347
+Total reaction matches: 238755402421
+Avg timestep duration: 4.788775e-04, iterations remaining: 1, Time left: 0 minutes
+Estimated end time: 2025-03-11 05:34:07
+------------------------------------------------- 
+------------------------------------------------- 
+End simulation
+End date: 2025-03-11 05:34:07
+	Wall Time: 1.152934e+05 seconds
+
+==> 21/OUTPUT <==
+End iteration: 4000000, simulation time: 4.000000e+00 seconds.
+System time: 2025-03-09 22:41:29
+Elapsed time: 68 minutes
+Number of molecules: 386
+Number of complexes: 344
+Total reaction matches: 4691562773
+Avg timestep duration: 7.325137e-04, iterations remaining: 196000001, Time left: 2392 minutes
+Estimated end time: 2025-03-11 14:34:22
+------------------------------------------------- 
+Cannot resolve phi angle for protein 375 in complex 67 relative to protein 14 in complex 38. Final angle: -3.14159. Exiting...
+
+==> 22/OUTPUT <==
+End iteration: 22000000, simulation time: 2.200000e+01 seconds.
+System time: 2025-03-10 02:53:09
+Elapsed time: 320 minutes
+Number of molecules: 386
+Number of complexes: 343
+Total reaction matches: 25660093219
+Avg timestep duration: 6.787803e-04, iterations remaining: 178000001, Time left: 2013 minutes
+Estimated end time: 2025-03-11 12:26:52
+------------------------------------------------- 
+Cannot resolve phi angle for protein 365 in complex 125 relative to protein 14 in complex 8. Final angle: -3.14159. Exiting...
+
+==> 23/OUTPUT <==
+End iteration: 1000000, simulation time: 1.000000e+00 seconds.
+System time: 2025-03-09 21:55:57
+Elapsed time: 23 minutes
+Number of molecules: 386
+Number of complexes: 344
+Total reaction matches: 1178413273
+Avg timestep duration: 1.406213e-03, iterations remaining: 199000001, Time left: 4663 minutes
+Estimated end time: 2025-03-13 03:39:53
+------------------------------------------------- 
+Cannot resolve phi angle for protein 379 in complex 224 relative to protein 18 in complex 18. Final angle: -3.14159. Exiting...
+
+==> 24/OUTPUT <==
+Number of molecules: 386
+Number of complexes: 347
+Total reaction matches: 229679810034
+Avg timestep duration: 4.968735e-04, iterations remaining: 1, Time left: 0 minutes
+Estimated end time: 2025-03-11 05:29:46
+------------------------------------------------- 
+------------------------------------------------- 
+End simulation
+End date: 2025-03-11 05:29:46
+	Wall Time: 1.150328e+05 seconds
+
+==> 25/OUTPUT <==
+End iteration: 6000000, simulation time: 6.000000e+00 seconds.
+System time: 2025-03-09 23:51:31
+Elapsed time: 138 minutes
+Number of molecules: 386
+Number of complexes: 343
+Total reaction matches: 7020944022
+Avg timestep duration: 1.359511e-03, iterations remaining: 194000001, Time left: 4395 minutes
+Estimated end time: 2025-03-13 01:07:16
+------------------------------------------------- 
+Cannot resolve phi angle for protein 380 in complex 341 relative to protein 8 in complex 276. Final angle: -3.14159. Exiting...
+
+==> 26/OUTPUT <==
+End iteration: 8000000, simulation time: 8.000000e+00 seconds.
+System time: 2025-03-09 23:50:55
+Elapsed time: 138 minutes
+Number of molecules: 386
+Number of complexes: 341
+Total reaction matches: 9355078681
+Avg timestep duration: 7.108916e-04, iterations remaining: 192000001, Time left: 2274 minutes
+Estimated end time: 2025-03-11 13:45:46
+------------------------------------------------- 
+Cannot resolve phi angle for protein 373 in complex 18 relative to protein 8 in complex 225. Final angle: -3.14159. Exiting...
+
+==> 27/OUTPUT <==
+Number of molecules: 386
+Number of complexes: 347
+Total reaction matches: 232855059904
+Avg timestep duration: 5.209328e-04, iterations remaining: 1, Time left: 0 minutes
+Estimated end time: 2025-03-11 05:14:11
+------------------------------------------------- 
+------------------------------------------------- 
+End simulation
+End date: 2025-03-11 05:14:11
+	Wall Time: 1.140975e+05 seconds
+
+==> 28/OUTPUT <==
+End iteration: 10000000, simulation time: 1.000000e+01 seconds.
+System time: 2025-03-10 00:26:21
+Elapsed time: 173 minutes
+Number of molecules: 386
+Number of complexes: 342
+Total reaction matches: 11708509538
+Avg timestep duration: 7.145625e-04, iterations remaining: 190000001, Time left: 2262 minutes
+Estimated end time: 2025-03-11 14:09:08
+------------------------------------------------- 
+Cannot resolve phi angle for protein 383 in complex 10 relative to protein 15 in complex 276. Final angle: -3.14159. Exiting...
+
+==> 29/OUTPUT <==
+Number of molecules: 386
+Number of complexes: 346
+Total reaction matches: 250582902362
+Avg timestep duration: 4.841537e-04, iterations remaining: 1, Time left: 0 minutes
+Estimated end time: 2025-03-11 05:31:51
+------------------------------------------------- 
+------------------------------------------------- 
+End simulation
+End date: 2025-03-11 05:31:51
+	Wall Time: 1.151574e+05 seconds

@@ -5,11 +5,12 @@
 # 
 
 start parameters
-    nItr = 10001 #iterations
+    nItr = 1000000001 #iterations
     timeStep = 1e0 # us, the maximum timestep calculated from kbPN
-    timeWrite = 1e3
-    pdbWrite = 1e4
-    trajWrite = 1e6
+    timeWrite = 1e5
+    restartWrite = 1e5
+    pdbWrite = 1e7
+    trajWrite = 1e9
     assocdissocwrite = true
     overlapSepLimit = 1.0
 end parameters
