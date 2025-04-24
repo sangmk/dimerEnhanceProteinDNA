@@ -45,7 +45,7 @@ def __ana_enh_III(parm, numClusterS):
     enh_ns = __ana_enh_ns(parm)
     CPtot = __ana_PtotFrac(enh_ns, (CP0-CS0)*KPP)*(CP0-CS0)
     if numClusterS == 2:
-        return enh_ns + np.exp(np.log(occ*CS0 / 2) - np.log(KPP) - 2*np.log(CPtot))
+        return enh_ns + np.exp(np.log(CS0 / 2) - np.log(KPP) - 2*np.log(CPtot))
     elif numClusterS == 1:
         return enh_ns * CPtot**2 / (CPtot+CS0)**2
     
@@ -59,7 +59,7 @@ def ana_occupancy(parm, numClusterS):
     if numClusterS == 0:
         raise ValueError('There is no targets, thus no target occupancy!')
     elif numClusterS == 2:
-        dimerPart = (KPP*CPeq**2) * KPS * ((2 + 4*EnhChiPN + 2*EnhChiPN**2) + 2*C0*KPS*(1+2*EnhChiPN+EnhChiPN**2))
+        dimerPart = 2 * (KPP*CPeq**2) * KPS * ((2 + 4*EnhChiPN + 2*EnhChiPN**2) + C0*KPS*(1+2*EnhChiPN+EnhChiPN**2))
     elif numClusterS == 1:
         dimerPart = (KPP*CPeq**2) * KPS * (2 + 4*EnhChiPN + 2*EnhChiPN**2)
     monomerPart = KPS*CPeq * (EnhChiPN + 1)

@@ -91,9 +91,10 @@ def calc_resTonS_modelB(parm, equi):
 # calculate S site occupancies
 def calc_occS_modelC(parm, equi):
     # get equilibrium
-    Socc = np.sum(equi[['PS','PSN','PPS','PPSN','PSPN', 'PNPSN']])\
-            + 2*np.sum(equi[['PSPS','PSPSN','PSNPSN']])
-    return Socc/(Socc+equi['S'])
+    Socc = np.sum(equi[['PS','PSN']])\
+            + 2*np.sum(equi[['PPS','PPSN','PSPN', 'PNPSN', 'PSPS','PSPSN','PSNPSN']])
+    ALLS = 2*np.sum(equi[['PS','PSN', 'PPS','PPSN','PSPN', 'PNPSN', 'PSPS','PSPSN','PSNPSN']]) + equi['S']
+    return Socc/ALLS
 
 def calc_occS_modelB(parm, equi):
     # get equilibrium
