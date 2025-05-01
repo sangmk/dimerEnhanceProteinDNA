@@ -79,6 +79,7 @@ def GenParameters(
         CP0: list, the protein concentration in M. CP0 and NP0 cannot be both np.nan.
         NP0: list, the protein number. If CP0 is provided, NP0 will be calculated.
         KPN: list, the equilibrium constant for P-N binding.
+        kaPN: number, association rate in nm^3/s
         KPP: list, the equilibrium constant for P-P binding.
         kbPP_fixed: float, the fixed value of kbPP. Set to np.nan if it is not fixed.
         area3Dto1D: list, to calculate gamma = V/L / area3Dto1D.
