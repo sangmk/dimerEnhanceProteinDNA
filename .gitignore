@@ -15,3 +15,5 @@ Tests/
 # ignore specific files labeled as "ignore"
 *.ignore
 IGNORE*
+# ignore mac os files
+.DS_Store
