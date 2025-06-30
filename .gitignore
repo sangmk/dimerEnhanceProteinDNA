@@ -4,6 +4,7 @@ OUT*
 *.out
 *.OUT
 *.dat
+!restart.dat
 # ignore python cache files
 *.pyc
 __pycache__/
