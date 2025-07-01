@@ -97,6 +97,6 @@ start reactions
     assocAngles = [1.570796, 1.570796, -1.570796, 1.570796, 0.000000]
     loopcoopfactor = 1
     bindRadSameCom = 1.1
-    area3dto1d = 1
+    area3dto1d = 10
 
 end reactions

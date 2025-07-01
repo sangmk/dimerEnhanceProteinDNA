@@ -68,15 +68,15 @@ start reactions
     bindRadSameCom = 1.1
     area3dto1d = 10
     
-    # P(pp0) + P(pp0) <-> P(pp0!1).P(pp0!1)
-    # onRate3Dka = 0.16658190471376497 
-    # offRatekb = 10.031562301862927 # Keq = 1e4
-    # norm1 = [0, 0, 1]
-    # norm2 = [0, 0, 1]
-    # sigma = 2
-    # assocAngles = [1.570796, 1.570796, -1.570796, 1.570796, 0.000000]
-    # loopcoopfactor = 1
-    # bindRadSameCom = 1.1
-    # area3dto1d = 1
+    P(pp0) + P(pp0) <-> P(pp0!1).P(pp0!1)
+    onRate3Dka = 0.16658190471376497 
+    offRatekb = 10.031562301862927 # Keq = 1e4
+    norm1 = [0, 0, 1]
+    norm2 = [0, 0, 1]
+    sigma = 2
+    assocAngles = [1.570796, 1.570796, -1.570796, 1.570796, 0.000000]
+    loopcoopfactor = 1
+    bindRadSameCom = 1.1
+    area3dto1d = 10
 
 end reactions

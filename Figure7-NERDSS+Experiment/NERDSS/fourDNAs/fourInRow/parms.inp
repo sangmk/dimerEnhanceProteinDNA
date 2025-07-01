@@ -21,30 +21,10 @@ end boundaries
 start molecules
     S : 10
     N : 446
-    P : 2
+    P : 4
 end molecules
 
 start reactions
-
-    # N(ref) + nuc(ref) -> N(ref!1).nuc(ref!1)
-    # onRate3Dka = 0
-    # offRatekb = 0
-    # norm1 = [0, 0, 1]
-    # norm2 = [0, 0, 1]
-    # sigma = 5.5
-    # assocAngles = [nan, nan, nan, nan, nan]
-    # loopcoopfactor = 1
-    # bindRadSameCom = 1.1
-
-    # P(ref) + nuc(ref) -> P(ref!1).nuc(ref!1)
-    # onRate3Dka = 0
-    # offRatekb = 0
-    # norm1 = [0, 0, 1]
-    # norm2 = [0, 0, 1]
-    # sigma = 5.5
-    # assocAngles = [nan, nan, nan, nan, nan]
-    # loopcoopfactor = 1
-    # bindRadSameCom = 1.1    
 
     S(re1) + S(re2) -> S(re1!1).S(re2!1)
     onRate3Dka = 1e6
@@ -77,16 +57,16 @@ start reactions
     bindRadSameCom = 1.1
     area3dto1d = 10
     
-    # P(pp1) + P(pp2) <-> P(pp1!1).P(pp2!1)
-    # onRate3Dka = 0.16658190471376497 
-    # offRatekb = 10.031562301862927 # Keq = 1e4
-    # norm1 = [0, 0, 1]
-    # norm2 = [0, 0, 1]
-    # sigma = 0.6
-    # assocAngles = [2.86329, 2.86329, -1.5708, 1.5708, 0.000000]
-    # loopcoopfactor = 1
-    # bindRadSameCom = 1.1
-    # area3dto1d = 10
+    P(pp1) + P(pp2) <-> P(pp1!1).P(pp2!1)
+    onRate3Dka = 0.16658190471376497 
+    offRatekb = 10.031562301862927 # Keq = 1e4
+    norm1 = [0, 0, 1]
+    norm2 = [0, 0, 1]
+    sigma = 0.6
+    assocAngles = [2.86329, 2.86329, -1.5708, 1.5708, 0.000000]
+    loopcoopfactor = 1
+    bindRadSameCom = 1.1
+    area3dto1d = 10
     
     P(pp0) + P(pp0) <-> P(pp0!1).P(pp0!1)
     onRate3Dka = 0.16658190471376497 
@@ -97,6 +77,6 @@ start reactions
     assocAngles = [1.570796, 1.570796, -1.570796, 1.570796, 0.000000]
     loopcoopfactor = 1
     bindRadSameCom = 1.1
-    area3dto1d = 1
+    area3dto1d = 10
 
 end reactions
