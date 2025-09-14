@@ -5,6 +5,9 @@ OUT*
 *.OUT
 *.dat
 !restart.dat
+RESTARTS
+PDB
+DATA
 # ignore python cache files
 *.pyc
 __pycache__/
