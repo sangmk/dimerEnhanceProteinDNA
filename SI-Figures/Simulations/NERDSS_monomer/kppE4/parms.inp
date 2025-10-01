@@ -22,7 +22,7 @@ end molecules
 start reactions
 
     N(bs) + P(dbn) <-> N(bs!1).P(dbn!1)
-    onRate3Dka = 200.00212208842396
+    onRate3Dka = 0.00020000212208842396
     offRatekb = 1.204412779216489 # Keq = 10^2.0
     norm1 = [0, 0, 1]
     norm2 = [0, 0, 1]
@@ -33,7 +33,7 @@ start reactions
     area3dto1d = 10
 
     P(dmr) + P(dmr) <-> P(dmr!1).P(dmr!1)
-    onRate3Dka = 6642.896739650485 
+    onRate3Dka = 0.006642896739650485 
     offRatekb = 0.4000352416617522 # Keq = 10^4.0
     norm1 = [0, 0, 1]
     norm2 = [0, 0, 1]
