@@ -1,0 +1,4 @@
+TITLE  PDB TIMESTEP                                                          1000 CREATED Wed Nov  6 16:07:44 2024
+CRYST1  106      31.623   31.623   90     90     90      P1   
+ATOM      0 STR  bar     0         5.0     1.0     1.5     0     0CL
+ATOM      1 END  bar     0        10.0     1.0     1.5     0     0CL
