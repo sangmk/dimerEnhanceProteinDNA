@@ -3,7 +3,6 @@ out*
 OUT*
 *.out
 *.OUT
-*.dat
 !restart.dat
 RESTARTS
 PDB
