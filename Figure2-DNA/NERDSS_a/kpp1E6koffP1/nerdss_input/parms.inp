@@ -1,7 +1,7 @@
 # two proteins bind nonspecific sites
 
 start parameters
-    nItr = 1e9 #iterations
+    nItr = 5e9 #iterations
     timeStep = 1 # us, the maximum timestep calculated from kbPN
     timeWrite = 1e8
     pdbWrite = 1e9

@@ -208,8 +208,10 @@ def readResT_from_NERDSS(
                     protein.updateBoundState(False, currt)
                     # add the removed protein to complex list
                     __add_newComplex(complexList, protein)
-                if debug: print(pro1ID, 'startT: %.3f'%proteinList[pro1ID].boundStartTime, 'endT: %.3f'%proteinList[pro1ID].boundEndTime)
-                if debug: print(pro2ID, 'startT: %.3f'%proteinList[pro2ID].boundStartTime, 'endT: %.3f'%proteinList[pro2ID].boundEndTime)
+                if debug: print(pro1ID, 'startT: %.3f'%proteinList[pro1ID].boundStartTime, 
+                                'endT: %.3f'%proteinList[pro1ID].boundEndTime)
+                if debug: print(pro2ID, 'startT: %.3f'%proteinList[pro2ID].boundStartTime, 
+                                'endT: %.3f'%proteinList[pro2ID].boundEndTime)
                     
             elif rxntype == 'rxnSUB':
                 # a protein-substrate reaction happens
@@ -232,6 +234,7 @@ def readResT_from_NERDSS(
                 if debug: 
                     for memberPro in complexList[proteinList[proID].multimerID].components:
                         print('startT: %.3f'%memberPro.boundStartTime, 'endT: %.3f'%memberPro.boundEndTime)
+        
         if debug: print()
     # finished reading the file
     # get the residence time and search time of each protein
