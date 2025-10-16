@@ -1,19 +1,24 @@
-cd dimer
-sbatch submitjob.sh
-cd ..
+#bash
 
-cd monomer
-sbatch submitjob.sh
-cd ..
+current_dir=`pwd`
+pfolder='16DNA'
 
-cd kpp1E6koffP01
+cd $pfolder/dimer
 sbatch submitjob.sh
-cd ..
+cd $current_dir
 
-cd kpp1E6koffP1
-sbatch submitjob.sh
-cd ..
+# cd monomer
+# sbatch submitjob.sh
+# cd $current_dir
 
-cd kpp1E6koffP10
+cd $pfolder/kpp1E6koffP01
 sbatch submitjob.sh
-cd ..
+cd $current_dir
+
+cd $pfolder/kpp1E6koffP1
+sbatch submitjob.sh
+cd $current_dir
+
+cd $pfolder/kpp1E6koffP10
+sbatch submitjob.sh
+cd $current_dir
