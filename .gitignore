@@ -7,7 +7,7 @@ OUT*
 !restart.dat
 RESTARTS
 PDB
-DATA
+# DATA
 # ignore python cache files
 *.pyc
 __pycache__/
