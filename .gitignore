@@ -8,15 +8,17 @@ OUT*
 RESTARTS
 PDB
 # NERDSS outputs in DATA folder
-# *assoc_dissoc_time.dat
-*histogram_complexes_time.dat
-*system.psf
-*bound_pair_time.dat
-*initial_crds.xyz
-*trajectory.xyz
-*copy_numbers_time.dat
-*mono_dimer_time.dat
-*transition_matrix_time.dat
+# assoc_dissoc_time.dat
+**/histogram_complexes_time.dat
+**/system.psf
+**/bound_pair_time.dat
+**/initial_crds.xyz
+**/trajectory.xyz
+**/copy_numbers_time.dat
+**/mono_dimer_time.dat
+**/transition_matrix_time.dat
+**/event_counters_time.dat
+**/observables_time.dat
 # ignore python cache files
 *.pyc
 __pycache__/
