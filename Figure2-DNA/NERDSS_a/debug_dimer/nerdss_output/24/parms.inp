@@ -2,7 +2,7 @@
 
 start parameters
     nItr = 5e9 #iterations
-    timeStep = 1 # us, the maximum timestep calculated from kbPN
+    timeStep = 0.1 # us, the maximum timestep calculated from kbPN
     timeWrite = 1e8
     pdbWrite = 1e9
     trajWrite = 1e9
