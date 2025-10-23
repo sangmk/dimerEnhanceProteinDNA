@@ -1,0 +1,271 @@
+Command: ./nerdss -f parms.inp
+Start date: 2025-10-22 18:07:10
+RNG Seed: 1448466554
+
+Parsing Input: 
+This is a new simulation with input file: parms.inp
+Parsing simulation parameters...
+Read in nItr: 5000000000 timeSteps
+Read in timeStep: 0.1 us
+Read in timeWrite: 100000000 timeSteps
+Read in pdbWrite: 1000000000 timeSteps
+Read in trajWrite: 1000000000 timeSteps
+Read in restartWrite: 1000000000 timeSteps
+Read in checkPoint: 1000000000 timeSteps
+Read in assocDissocWrite: true
+Read in overlapSepLimit: 1 nm
+Parsing simulation boundary conditions...
+Read in waterBox: [420 nm, 20 nm, 20 nm]
+Parsing mol file information...
+P.mol
+Read in checkOverlap: false
+Read in D: [1.5um^2s^-1, 1.5um^2s^-1, 1.5um^2s^-1]
+Read in Dr: [0.047rad^2s^-1, 0.047rad^2s^-1, 0.047rad^2s^-1]
+Coordinates: 
+COM: [0nm, 0nm, 0nm]
+dbn: [-0.3869nm, -0.3671nm, -0.154nm]
+dbs: [0.3nm, -0.4nm, 0.5nm]
+dmr: [0nm, 0.5nm, 0nm]
+ref: [0nm, 0nm, 0.0001nm]
+radius calculated from the ifacesCoord: 0.707107 nm
+mass auto calculated from the radius: 0.707107
+
+N.mol
+Read in isPromoter: true
+Read in D: [1um^2s^-1, 0um^2s^-1, 0um^2s^-1]
+Read in Dr: [0rad^2s^-1, 0rad^2s^-1, 0rad^2s^-1]
+Coordinates: 
+COM: [0nm, 0nm, 0nm]
+bs: [0nm, 0nm, 0.0001nm]
+ref: [0nm, 0nm, 0.0001nm]
+radius calculated from the ifacesCoord: 0.0001 nm
+mass auto calculated from the radius: 0.0001
+
+Parsing reactions...
+Parsing new reaction with form:
+    N(bs) + P(dbn) <-> N(bs!1).P(dbn!1)
+Reversible reaction.
+Bimolecular reaction detected.
+Parsing reactants...
+Parsing products...
+Read in value of onRate3Dka: 0.0002nm^3us^-1
+Read in value of offRatekb: 0.6022s^-1
+Read in value of norm1: [0i + 0j + 1k]
+Read in value of norm2: [0i + 0j + 1k]
+Read in value of sigma: 1nm
+Read in value of assocAngles: [theta1: 1.28935, theta2: 2.57905, phi1: 0, phi2: nan, omega: 3.14159]
+Read in value of loopCoopFactor: 1
+Read in value of bindRadSameCom: 1.1
+Read in value of area3Dto1D: 114nm^2
+Finished reading reaction parameters, constructing reaction.
+Checking for valid states for reactant N
+Checking for valid states for reactant P
+Found corresponding interfaces: React: N(bs) -- Prod: N(bs)
+Found corresponding interfaces: React: P(dbn) -- Prod: P(dbn)
+Parameter set complete for reaction [N(bs)+P(dbn)<->N(bs!1).P(dbn!1)].
+
+Parsing new reaction with form:
+    P(dmr) + P(dmr) -> P(dmr!1).P(dmr!1)
+Irreversible reaction.
+Bimolecular reaction detected.
+Parsing reactants...
+Parsing products...
+Read in value of onRate3Dka: 11.5291nm^3us^-1
+Read in value of norm1: [0i + 0j + 1k]
+Read in value of norm2: [0i + 0j + 1k]
+Read in value of sigma: 2nm
+Read in value of assocAngles: [theta1: 1.5708, theta2: 1.5708, phi1: -1.5708, phi2: 1.5708, omega: 0]
+Read in value of loopCoopFactor: 1
+Read in value of bindRadSameCom: 10
+Read in value of area3Dto1D: 114nm^2
+Checking for valid states for reactant P
+Checking for valid states for reactant P
+Found corresponding interfaces: React: P(dmr) -- Prod: P(dmr)
+Found corresponding interfaces: React: P(dmr) -- Prod: P(dmr)
+Parameter set complete for reaction [P(dmr)+P(dmr)->P(dmr!1).P(dmr!1)].
+
+
+Input file parsing complete
+NUMBER OF MOLECULE TYPES: 2NUMBER OF INTERFACES PLUS STATES, including PRODUCTS: 8
+NUMBER OF MOLECULES IN GEN COORDS: 242
+Finding and fixing overlapping proteins.
+Iteration: 1
+Overlapping Proteins (false): 0
+No overlapping proteins found.
+
+Partitioning simulation box into sub-boxes...
+Rmaxlimit: 7.0354
+Simulation volume parameters:
+Total sub-volumes: 240
+	Dimensions: [30, 2, 4]
+	Maximum sub-volume neighbors: 13
+	Sub-volume size: [14, 10, 5]
+ Total species calculated from init_speciesFile.cpp: 8
+Initialized copyNumSpecies. Printing all values. total species: 8
+ absolute index: 0 Copy nums: 2
+ absolute index: 1 Copy nums: 2
+ absolute index: 2 Copy nums: 2
+ absolute index: 3 Copy nums: 2
+ absolute index: 4 Copy nums: 240
+ absolute index: 5 Copy nums: 240
+ absolute index: 6 Copy nums: 0
+ absolute index: 7 Copy nums: 0
+Pro pair:  p1: 0 p2: 0 index: 0 P,P'	Pro pair:  p1: 0 p2: 1 index: 1 P,N'	size of proPairlist: 2 Number of pairs: 4 numMolTypes: 2
+
+Simulation Parameters
+Number of iterations: 5000000000 timesteps
+Timestep: 0.1 us
+Timestep log interval (timeWrite): 100000000 timesteps
+Restart file write interval: 1000000000 timesteps
+Coordinate write interval (trajWrite): 1000000000 timesteps
+PDB Coordinate write interval: 1000000000 timesteps
+Checkpoint write interval: 1000000000 timesteps
+overlapSepLimit: 1 nm
+Transition matrix write interval: 500000000 timesteps
+ClusterOverlapCheck: false
+RNGwrite: false
+Molecule specific parameters:
+Number of unique molecule types: 2
+Total number of unique interfaces and states, including product states: 8
+Total number of complexes in system at start: 242
+Total number of units (molecules + interfaces) in system at start: 730
+Maximum allowed number of unique 2D reactions: 10000
+ isSphere? false
+ sphere Radius 0
+ hasCompartment? false
+ compartment Radius 0
+ BOX geometry, dimensions: 
+420 20 20
+ hasImplicitLipid? false
+
+Molecule Information
+Molecule template 0
+Name: P
+Copy number:2
+ Diffusion trans: 1.5 1.5 1.5
+ Diffusion Rot: 0.047 0.047 0.047
+Is a promoter: false
+Is a rod: false
+Is a point: false
+Radius: 0.707107
+
+Interfaces:
+Name: dbn
+Relative index: 0
+Absolute index: 0
+Forward Reactions:  (0)
+
+Name: dbs
+Relative index: 1
+Absolute index: 1
+
+Name: dmr
+Relative index: 2
+Absolute index: 2
+Forward Reactions:  (1)
+
+Name: ref
+Relative index: 3
+Absolute index: 3
+
+Molecule template 1
+Name: N
+Copy number:240
+ Diffusion trans: 1 0 0
+ Diffusion Rot: 0 0 0
+Is a promoter: true
+Is a rod: true
+Is a point: false
+Radius: 0.0001
+
+Interfaces:
+Name: bs
+Relative index: 0
+Absolute index: 4
+Forward Reactions:  (0)
+
+Name: ref
+Relative index: 1
+Absolute index: 5
+
+
+Reactions
+Forward Rxn: 0
+Absolute index: 0
+Type: Bimolecular association
+Reactants:
+ [iface name: bs, iface index: 4, required Free]
+ [iface name: dbn, iface index: 0, required Free]
+
+Products:
+ [iface name: bs, iface index: 6, requires interaction]
+ [iface name: dbn, iface index: 6, requires interaction]
+
+Rate(s):
+Rate 0: 0.0002
+Reactant 1 requires interfaces:
+Reactant 2 requires interfaces:
+Sigma: 1
+Association angles:
+Theta 1   1.28935
+Theta 2   2.57905
+Phi 1           0
+Phi 2         nan
+Omega     3.14159
+
+label: nonspecified
+Is On Membrane: false
+bindRadSameCom 1.1
+loopCoopFactor 1
+length3Dto2D 2
+area3Dto1D 114
+isCoupled? false
+
+Back Rxn: 0
+Absolute index: 1
+Type: Bimolecular association
+Reactants:
+ [iface name: bs, iface index: 6, requires interaction]
+ [iface name: dbn, iface index: 6, requires interaction]
+
+Products:
+ [iface name: bs, iface index: 4, required Free]
+ [iface name: dbn, iface index: 0, required Free]
+
+
+Rate(s):
+Rate 0: 0.6022
+Reactant 1 requires interfaces:
+Reactant 2 requires interfaces:
+On Membrane? false
+Forward Rxn: 1
+Absolute index: 2
+Type: Bimolecular association
+Reactants:
+ [iface name: dmr, iface index: 2, required Free]
+ [iface name: dmr, iface index: 2, required Free]
+
+Products:
+ [iface name: dmr, iface index: 7, requires interaction]
+ [iface name: dmr, iface index: 7, requires interaction]
+
+Rate(s):
+Rate 0: 11.5291
+Reactant 1 requires interfaces:
+Reactant 2 requires interfaces:
+Sigma: 2
+Association angles:
+Theta 1    1.5708
+Theta 2    1.5708
+Phi 1     -1.5708
+Phi 2      1.5708
+Omega           0
+
+label: nonspecified
+Is On Membrane: false
+bindRadSameCom 10
+loopCoopFactor 1
+length3Dto2D 4
+area3Dto1D 114
+isCoupled? false
+*************** BEGIN SIMULATION **************** 
