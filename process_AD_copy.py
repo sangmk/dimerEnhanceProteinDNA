@@ -138,6 +138,7 @@ class DIMER():
         self.id = cmplxID
         self.components:list[PROTEIN] = [] # the proteins this complex has
         self.boundstate = False
+        self.substrates = [] # the substrates this complex binds to
     
     def addComponent(self, protein: PROTEIN, currt: float):
         '''Add a protein to the complex. Update this complex and its components'''
@@ -162,6 +163,14 @@ class DIMER():
         self.boundstate = any([pro.boundToSubstrates() for pro in self.components])
         for pro in self.components:
             pro.updateBoundState(self.boundstate, currt)
+        # update substrates
+        self.getSubstrates()
+
+    def getSubstrates(self):
+        '''Get all substrates this complex binds to'''
+        self.substrates = []
+        for pro in self.components:
+            self.substrates.extend(pro.substrates)
 
     def __str__(self):
         return 'Complex %d: %s'%(self.id, ['%s:%s'%(pro.name, pro.id) for pro in self.components])
@@ -244,8 +253,6 @@ def readResT_from_NERDSS(
 import csv
 from collections import defaultdict
 
-STATE_LABELS = {0: 'PP', 1: 'PPN', 2: 'PNPN'}
-
 def readInnerStateTransitions(
     file_assoc_dissoc_times: str,
     dt: float,
@@ -282,21 +289,39 @@ def readInnerStateTransitions(
             currt = _apply_rxn_update(rxntype, rxnInfo, proteinList, complexList, __add_protein_to_list, __add_newComplex, debug)
             # evaluate inner state of dimers only
             for cid, cmplx in list(complexList.items()):
+                # only consider dimers (2 proteins)
                 if len(cmplx.components) != 2:
                     last_state.pop(cid, None)
                     last_time.pop(cid, None)
                     continue
-                nbound = sum(1 for pro in cmplx.components if pro.boundToSubstrates())
-                if nbound < 0: nbound = 0
-                if nbound > 2: nbound = 2
-                state = STATE_LABELS[nbound]
+                # get the substrates this complex binds to
+                substrates_bound = cmplx.substrates
+                # map to PP, PPN, PNPN, PPS, PSPN, only consider these states
+                nbound_S = substrates_bound.count('S')
+                nbound_N = substrates_bound.count('N')
+                if nbound_S == 1:
+                    if nbound_N == 0:
+                        state = 'PPS'
+                    elif nbound_N == 1:
+                        state = 'PSPN'
+                    else:
+                        state = 'PNPSN' # both N bound
+                else:
+                    # no S bound
+                    if nbound_N == 0:
+                        state = 'PP'
+                    elif nbound_N == 1:
+                        state = 'PPN'
+                    else:
+                        state = 'PNPN'  # both N bound
+                # record transition if state changed
                 if cid not in last_state:
                     last_state[cid] = state
                     last_time[cid] = currt
                 elif state != last_state[cid]:
                     fr, to = last_state[cid], state
                     t0, t1 = last_time[cid], currt
-                    if not (exclude_pp_to_ppn and fr == 'PP' and to == 'PPN'):
+                    if not (exclude_pp_to_ppn and fr == 'PP'):
                         transitions.append((fr, to, t0, t1, t1 - t0))
                     last_state[cid] = state
                     last_time[cid] = currt

@@ -18,6 +18,8 @@ PDB
 **/transition_matrix_time.dat
 **/event_counters_time.dat
 **/observables_time.dat
+!Figure2-DNA/NERDSS_a/1DNA/**/histogram_complexes_time.dat
+# !Figure2-DNA/NERDSS_a/debug_dimer/**/OUTPUT
 # ignore python cache files
 *.pyc
 __pycache__/
