@@ -29,7 +29,7 @@ start reactions
     norm1 = [0, 0, 1]
     norm2 = [0, 0, 1]
     sigma = 1.00
-    assocAngles = [1.289349, 2.579046, 0.000000, nan, M_PI]
+    assocAngles = [1.916230, 1.129689, 2.717872, -0.091124, 2.394677]
     loopcoopfactor = 1
     bindRadSameCom = 1.1
     area3dto1d = 114
@@ -41,7 +41,7 @@ start reactions
     sigma = 2.00
     assocAngles = [1.570796, 1.570796, -1.570796, 1.570796, 0.000000]
     loopcoopfactor = 1
-    bindRadSameCom = 10
+    bindRadSameCom = 2
     area3dto1d = 114
 
 end reactions
