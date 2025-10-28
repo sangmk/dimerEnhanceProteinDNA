@@ -18,6 +18,7 @@ PDB
 # **/event_counters_time.dat
 # **/observables_time.dat
 **/nerdss_output/**
+**/SIMS/**
 # Exceptions for specific datasets
 !**/assoc_dissoc_time.dat
 !**/histogram_complexes_time.dat
