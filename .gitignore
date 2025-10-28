@@ -1,6 +1,8 @@
 # Ignore output files
-out*
-OUT*
+outputs
+output
+OUTPUT
+OUTPUTS
 *.out
 *.OUT
 !restart.dat
