@@ -4,8 +4,9 @@ OUT*
 *.out
 *.OUT
 !restart.dat
-RESTARTS
-PDB
+**/RESTARTS/**
+**/PDB/**
+**/DATA/**
 # NERDSS outputs in DATA folder
 # **/histogram_complexes_time.dat
 # **/system.psf

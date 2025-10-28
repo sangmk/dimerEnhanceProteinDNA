@@ -2,7 +2,7 @@ import numpy as np
 
 # Reusable helper to apply one parsed reaction line and update protein/complex state
 # It returns currt (seconds) from rxnInfo.
-def _apply_rxn_update(rxntype, rxnInfo, proteinList, complexList, __add_protein_to_list, __add_newComplex, debug=False):
+def _apply_rxn_update(rxntype, rxnInfo, proteinList, complexList, __add_protein_to_list, __add_newComplex, debug=False, record=True):
     if rxntype == 'rxnPRO':
         pro1, pro1ID, pro2, pro2ID, rxn, currt = rxnInfo
         __add_protein_to_list(proteinList, complexList, pro1, pro1ID)
@@ -10,11 +10,11 @@ def _apply_rxn_update(rxntype, rxnInfo, proteinList, complexList, __add_protein_
         if rxn == 'BOND':
             # move pro2 into pro1's complex
             del complexList[proteinList[pro2ID].multimerID]
-            complexList[proteinList[pro1ID].multimerID].addComponent(proteinList[pro2ID], currt)
+            complexList[proteinList[pro1ID].multimerID].addComponent(proteinList[pro2ID], currt, record=record)
         elif rxn == 'BREAK':
             if proteinList[pro1ID].multimerID != -1:
-                protein = complexList[proteinList[pro1ID].multimerID].removeLastComponent(currt)
-                protein.updateBoundState(False, currt)
+                protein = complexList[proteinList[pro1ID].multimerID].removeLastComponent(currt, record=record)
+                protein.updateBoundState(False, currt, record=record)
                 __add_newComplex(complexList, protein)
         return currt
     elif rxntype == 'rxnSUB':
@@ -22,11 +22,11 @@ def _apply_rxn_update(rxntype, rxnInfo, proteinList, complexList, __add_protein_
         __add_protein_to_list(proteinList, complexList, pro, proID)
         if rxn == 'BOND':
             proteinList[proID].addSubstrate(sub)
-            complexList[proteinList[proID].multimerID].updateBoundState(currt)
+            complexList[proteinList[proID].multimerID].updateBoundState(currt, record=record)
         elif rxn == 'BREAK':
             if sub in proteinList[proID].substrates:
                 proteinList[proID].removeSubstrate(sub)
-                complexList[proteinList[proID].multimerID].updateBoundState(currt)
+                complexList[proteinList[proID].multimerID].updateBoundState(currt, record=record)
         return currt
     else:
         # IGNORE or unexpected
@@ -92,11 +92,11 @@ class PROTEIN():
     def updateMultimer(self, multimerID: int):
         self.multimerID = multimerID
 
-    def updateBoundState(self, complexBound: bool, currt: float):
+    def updateBoundState(self, complexBound: bool, currt: float, record: bool = True):
         self.boundstate = complexBound or self.boundToSubstrates()
-        self.updateBoundTime(currt)
+        self.updateBoundTime(currt, record=record)
 
-    def updateBoundTime(self, currt: float):
+    def updateBoundTime(self, currt: float, record: bool = True):
         '''update the start and end time of binding. Also calculate the residence time and search time'''
         # decide whether the current time is the start or end time of binding
         if self.boundStartTime < 0:
@@ -104,7 +104,8 @@ class PROTEIN():
             if self.boundstate == True:
                 self.boundStartTime = currt
                 if self.boundEndTime > 0:
-                    self.searchTimeList.append(self.boundStartTime - self.boundEndTime)
+                    if record:
+                        self.searchTimeList.append(self.boundStartTime - self.boundEndTime)
                     self.boundEndTime = -1
                 else:
                     # do not count first arrival
@@ -117,7 +118,8 @@ class PROTEIN():
             if self.boundstate == False:
                 self.boundEndTime = currt
                 if self.boundStartTime > 0:
-                    self.resTimeList.append(self.boundEndTime - self.boundStartTime)
+                    if record:
+                        self.resTimeList.append(self.boundEndTime - self.boundStartTime)
                     self.boundStartTime = -1
                 else:
                     # in case this protein is in bound state at the beginning
@@ -138,30 +140,39 @@ class DIMER():
         self.id = cmplxID
         self.components:list[PROTEIN] = [] # the proteins this complex has
         self.boundstate = False
+        self.substrates = [] # the substrates this complex binds to
     
-    def addComponent(self, protein: PROTEIN, currt: float):
+    def addComponent(self, protein: PROTEIN, currt: float, record: bool = True):
         '''Add a protein to the complex. Update this complex and its components'''
         self.components.append(protein)
         # update the multimerID of the new protein
         protein.updateMultimer(self.id)
         # update the bound state of all proteins in the complex
-        self.updateBoundState(currt)
+        self.updateBoundState(currt, record=record)
     
-    def removeLastComponent(self, currt: float):
+    def removeLastComponent(self, currt: float, record: bool = True):
         '''Remove a protein from the complex. Update this complex and its components'''
         protein = self.components.pop()
         # if no protein in the complex is in bound state, then the complex is in search state
-        self.updateBoundState(currt)
+        self.updateBoundState(currt, record=record)
         # return the protein for further processing
         return protein
     
     def isEmpty(self):
         return not self.components
     
-    def updateBoundState(self, currt: float):
+    def updateBoundState(self, currt: float, record: bool = True):
         self.boundstate = any([pro.boundToSubstrates() for pro in self.components])
         for pro in self.components:
-            pro.updateBoundState(self.boundstate, currt)
+            pro.updateBoundState(self.boundstate, currt, record=record)
+        # update substrates
+        self.getSubstrates()
+
+    def getSubstrates(self):
+        '''Get all substrates this complex binds to'''
+        self.substrates = []
+        for pro in self.components:
+            self.substrates.extend(pro.substrates)
 
     def __str__(self):
         return 'Complex %d: %s'%(self.id, ['%s:%s'%(pro.name, pro.id) for pro in self.components])
@@ -198,7 +209,7 @@ def readResT_from_NERDSS(
         # create a new multimer
         newMultimerID = __maxComplexID(complexList) + 1
         newMultimer = DIMER(newMultimerID)
-        newMultimer.addComponent(protein, currt=-1)
+        newMultimer.addComponent(protein, currt=-1, record=False)
         complexList[newMultimerID] = newMultimer
     
     def __add_protein_to_list(proteinList, complexList, pro, proID):
@@ -215,10 +226,10 @@ def readResT_from_NERDSS(
             if debug: print(line.strip())
             rxntype, rxnInfo = __read_A_D_line(line, dt, proteins, substrates)
             if debug: print(rxntype, rxnInfo)
-            if rxnInfo[-1] < startT:
-                # skip the reaction if it happens before the start time
-                continue
-            currt = _apply_rxn_update(rxntype, rxnInfo, proteinList, complexList, __add_protein_to_list, __add_newComplex, debug)
+            currt = rxnInfo[-1]
+            # always apply updates so pre-start structure/state is correct,
+            # but only record residence/search times for events at/after startT
+            currt = _apply_rxn_update(rxntype, rxnInfo, proteinList, complexList, __add_protein_to_list, __add_newComplex, debug, record=(currt >= startT))
             if debug and rxntype == 'rxnPRO':
                 pro1, pro1ID, pro2, pro2ID, _, _ = rxnInfo
                 print(pro1ID, 'startT: %.3f'%proteinList[pro1ID].boundStartTime, 'endT: %.3f'%proteinList[pro1ID].boundEndTime)
@@ -244,8 +255,6 @@ def readResT_from_NERDSS(
 import csv
 from collections import defaultdict
 
-STATE_LABELS = {0: 'PP', 1: 'PPN', 2: 'PNPN'}
-
 def readInnerStateTransitions(
     file_assoc_dissoc_times: str,
     dt: float,
@@ -260,8 +269,8 @@ def readInnerStateTransitions(
     def __add_newComplex(complexList, protein):
         newMultimerID = __maxComplexID(complexList) + 1
         newMultimer = DIMER(newMultimerID)
-        newMultimer.addComponent(protein, currt=-1)
-        complexList[newMultimerID] = newMultimer
+    newMultimer.addComponent(protein, currt=-1, record=False)
+    complexList[newMultimerID] = newMultimer
     def __add_protein_to_list(proteinList, complexList, pro, proID):
         if proID not in proteinList:
             proteinList[proID] = PROTEIN(pro, proID)
@@ -274,29 +283,76 @@ def readInnerStateTransitions(
     transitions = []
 
     with open(file_assoc_dissoc_times, 'r') as f:
+        started = False
         for line in f:
             rxntype, rxnInfo = __read_A_D_line(line, dt, proteins, substrates)
             currt = rxnInfo[-1]
+            # always apply updates so pre-start complexes/states are correct
+            currt = _apply_rxn_update(rxntype, rxnInfo, proteinList, complexList, __add_protein_to_list, __add_newComplex, debug, record=(currt >= startT))
+            # once we hit startT, initialize baseline states for existing dimers at startT
+            if currt >= startT and not started:
+                started = True
+                for cid, cmplx in list(complexList.items()):
+                    if len(cmplx.components) != 2:
+                        continue
+                    # compute state at startT
+                    substrates_bound = cmplx.substrates
+                    nbound_S = substrates_bound.count('S')
+                    nbound_N = substrates_bound.count('N')
+                    if nbound_S == 1:
+                        if nbound_N == 0:
+                            state = 'PPS'
+                        elif nbound_N == 1:
+                            state = 'PSPN'
+                        else:
+                            state = 'PNPSN'
+                    else:
+                        if nbound_N == 0:
+                            state = 'PP'
+                        elif nbound_N == 1:
+                            state = 'PPN'
+                        else:
+                            state = 'PNPN'
+                    last_state[cid] = state
+                    last_time[cid] = startT
+            # only evaluate & record transitions for times at/after startT
             if currt < startT:
                 continue
-            currt = _apply_rxn_update(rxntype, rxnInfo, proteinList, complexList, __add_protein_to_list, __add_newComplex, debug)
             # evaluate inner state of dimers only
             for cid, cmplx in list(complexList.items()):
+                # only consider dimers (2 proteins)
                 if len(cmplx.components) != 2:
                     last_state.pop(cid, None)
                     last_time.pop(cid, None)
                     continue
-                nbound = sum(1 for pro in cmplx.components if pro.boundToSubstrates())
-                if nbound < 0: nbound = 0
-                if nbound > 2: nbound = 2
-                state = STATE_LABELS[nbound]
+                # get the substrates this complex binds to
+                substrates_bound = cmplx.substrates
+                # map to PP, PPN, PNPN, PPS, PSPN, only consider these states
+                nbound_S = substrates_bound.count('S')
+                nbound_N = substrates_bound.count('N')
+                if nbound_S == 1:
+                    if nbound_N == 0:
+                        state = 'PPS'
+                    elif nbound_N == 1:
+                        state = 'PSPN'
+                    else:
+                        state = 'PNPSN' # both N bound
+                else:
+                    # no S bound
+                    if nbound_N == 0:
+                        state = 'PP'
+                    elif nbound_N == 1:
+                        state = 'PPN'
+                    else:
+                        state = 'PNPN'  # both N bound
+                # record transition if state changed
                 if cid not in last_state:
                     last_state[cid] = state
                     last_time[cid] = currt
                 elif state != last_state[cid]:
                     fr, to = last_state[cid], state
                     t0, t1 = last_time[cid], currt
-                    if not (exclude_pp_to_ppn and fr == 'PP' and to == 'PPN'):
+                    if not (exclude_pp_to_ppn and fr == 'PP'):
                         transitions.append((fr, to, t0, t1, t1 - t0))
                     last_state[cid] = state
                     last_time[cid] = currt
