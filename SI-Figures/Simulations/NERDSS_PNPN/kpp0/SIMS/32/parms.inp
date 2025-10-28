@@ -1,0 +1,46 @@
+# two proteins discover between two segments
+
+start parameters
+    nItr = 1e5 #iterations
+    timeStep = 1 # us, the maximum timestep calculated from kbPN
+    timeWrite = 1e6
+    pdbWrite = 1e4
+    trajWrite = 1e4
+    assocdissocwrite = true
+    overlapSepLimit = 1.0
+end parameters
+
+start boundaries
+    WaterBox = [1050.0, 31.623, 31.623] # VtoL=4000
+end boundaries
+
+start molecules
+    P : 20
+    N : 600
+end molecules
+
+start reactions
+
+    N(bs) + P(dbn) <-> N(bs!1).P(dbn!1)
+    onRate3Dka = 200.00212208842396
+    offRatekb = 1.204412779216489 # Keq = 10^2.0
+    norm1 = [0, 0, 1]
+    norm2 = [0, 0, 1]
+    sigma = 1.00
+    assocAngles = [1.289349, 2.579046, 0.000000, nan, M_PI]
+    loopcoopfactor = 1
+    bindRadSameCom = 1.1
+    area3dto1d = 10
+
+    P(dmr) + P(dmr) <-> P(dmr!1).P(dmr!1)
+    onRate3Dka = 0.0 
+    offRatekb = 0 # Keq = 10^-inf
+    norm1 = [0, 0, 1]
+    norm2 = [0, 0, 1]
+    sigma = 2.00
+    assocAngles = [1.570796, 1.570796, -1.570796, 1.570796, 0.000000]
+    loopcoopfactor = 1
+    bindRadSameCom = 10
+    area3dto1d = 10
+
+end reactions
