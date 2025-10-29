@@ -15,7 +15,25 @@ Dr      = [0.047, 0.047, 0.047]
 COM      0.0000     0.0000    0.0000
 dbn      0.3000    -0.4000    0.5000 # used to bind non-specifically
 dbs      0.3000    -0.4000    0.5000 # used to bind specifically
+##
+# Transcription factors (Proteins) information file
+##
+
+Name    = P
+checkOverlap = false
+
+# translational diffusion constants 
+D       = [1.5, 1.5, 1.5] # (in nucleus plasma)
+
+# rotational diffusion constants
+Dr      = [0.047, 0.047, 0.047]
+
+# Coordinates, with states below, or
+COM      0.0000     0.0000    0.0000
+dbn     -0.3869    -0.2671   -0.0540 # used to bind non-specifically
+dbs     -0.3869    -0.2671   -0.0540 # used to bind specifically
+pp0      0.0000     0.5000    0.0000 # used to only form dimers, COM-COM: 2nm
 pp1      0.7000     0.2000    0.0000 # pp1+pp2 to form multimers, COM-COM: 2nm
-pp2     -0.7000     0.2000    0.0000 # pp1+pp2
-pp0      0.0000     0.5000    0.0000 # pp0+pp0
+pp2     -0.7000     0.2000    0.0000 # pp1+pp2. pp1, pp2 should not be used together with pp0
+ref      0.0000     0.0000    0.0001 # only use for excluded volumes
 ref      0.0000     0.0000    0.0001

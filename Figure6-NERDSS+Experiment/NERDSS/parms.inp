@@ -1,0 +1,89 @@
+# two proteins bind nonspecific sites
+
+start parameters
+    nItr = 1e5 #iterations
+    timeStep = 10 # us, the maximum timestep calculated from kbPN
+    timeWrite = 100
+    pdbWrite = 100
+    trajWrite = 1e9
+    restartWrite = 1e9
+    checkPoint = 1e9
+    assocdissocwrite = true
+    overlapSepLimit = 1.0
+end parameters
+
+start boundaries
+    WaterBox = [50.0, 50.0, 50.0] 
+end boundaries
+
+start molecules
+    P : 4
+    N : 10
+    S : 2
+end molecules
+
+start reactions
+
+    S(re1) + S(re2) -> S(re1!1).S(re2!1)
+    onRate3Dka = 1e6
+    norm1 = [0, 0, 1]
+    norm2 = [0, 0, 1]
+    sigma = 1.8001
+    assocAngles = [M_PI, M_PI, nan, nan, 0.000000]
+    loopcoopfactor = 1
+    bindRadSameCom = 1.00001
+
+    N(bs) + P(dbn) <-> N(bs!1).P(dbn!1)
+    onRate3Dka = 0.0200
+    offRatekb = 0.6022 # Keq = 10^2.0 M^-1
+    norm1 = [0, 0, 1]
+    norm2 = [0, 0, 1]
+    sigma = 1.00
+    assocAngles = [1.916230, 1.129689, 2.717872, -0.091124, 2.394677]
+    loopcoopfactor = 1
+    bindRadSameCom = 1.1
+    area3dto1d = 114
+
+    S(bs) + P(dbs) -> S(bs!1).P(dbs!1)
+    onRate3Dka = 200
+    norm1 = [0, 0, 1]
+    norm2 = [0, 0, 1]
+    sigma = 1.00
+    assocAngles = [1.916230, 1.129689, 2.717872, -0.091124, 2.394677]
+    loopcoopfactor = 1
+    bindRadSameCom = 1.1
+    area3dto1d = 114
+
+    P(pp0) + P(pp0) <-> P(pp0!1).P(pp0!1)
+    onRate3Dka = 10
+    offRatekb = 0.4022
+    norm1 = [0, 0, 1]
+    norm2 = [0, 0, 1]
+    sigma = 2.00
+    assocAngles = [1.570796, 1.570796, -1.570796, 1.570796, 0.000000]
+    loopcoopfactor = 1
+    bindRadSameCom = 2
+    area3dto1d = 10
+
+    # P(pp1) + P(pp2) <-> P(pp1!1).P(pp2!1)
+    # onRate3Dka = 16.658190471376497 
+    # offRatekb = 0.6022
+    # norm1 = [0, 0, 1]
+    # norm2 = [0, 0, 1]
+    # sigma = 0.6
+    # assocAngles = [2.863293, 2.863293, -1.570796, 1.570796, 0.000000]
+    # loopcoopfactor = 1
+    # bindRadSameCom = 1.1
+    # area3dto1d = 10
+
+    P(ref) + P(ref) -> P(ref!1).P(ref!1)
+    onRate3Dka = 0
+    norm1 = [0, 0, 1]
+    norm2 = [0, 0, 1]
+    sigma = 2.00
+    assocAngles = [1.570796, 1.570796, -1.570796, 1.570796, 0.000000]
+    loopcoopfactor = 1
+    bindRadSameCom = 2
+    area3dto1d = 10
+
+end reactions

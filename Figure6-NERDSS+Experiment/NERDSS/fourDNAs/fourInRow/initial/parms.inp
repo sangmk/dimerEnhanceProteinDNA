@@ -73,10 +73,10 @@ start reactions
     offRatekb = 10.031562301862927 # Keq = 1e4
     norm1 = [0, 0, 1]
     norm2 = [0, 0, 1]
-    sigma = 2
+    sigma = 2.00
     assocAngles = [1.570796, 1.570796, -1.570796, 1.570796, 0.000000]
     loopcoopfactor = 1
-    bindRadSameCom = 1.1
+    bindRadSameCom = 2
     area3dto1d = 10
 
 end reactions
