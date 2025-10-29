@@ -35,8 +35,8 @@ start reactions
     area3dto1d = 114
 
     P(dmr) + P(dmr) <-> P(dmr!1).P(dmr!1)
-    onRate3Dka = 1.0134
-    offRatekb = 0.6103 # Keq = 10^6.0 M^-1
+    onRate3Dka = 1.0
+    offRatekb = 1.0 # Keq = 10^6.0 M^-1
     norm1 = [0, 0, 1]
     norm2 = [0, 0, 1]
     sigma = 2.00
