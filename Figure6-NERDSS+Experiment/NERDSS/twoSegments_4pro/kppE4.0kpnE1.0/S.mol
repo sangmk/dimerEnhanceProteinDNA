@@ -1,12 +1,12 @@
 ##
-# specific binding sites molecule information file
+# non-specific binding sites (raw DNA) molecule information file
 ##
 
 Name    = S
 isPromoter = true
 
 # translational diffusion constants
-D       = [0.0,0.0,0.0] # for chromatin
+D       = [0.0, 0.0, 0.0] # for chromatin
 
 # rotational diffusion constants
 Dr      = [0.000,0.000,0.000]

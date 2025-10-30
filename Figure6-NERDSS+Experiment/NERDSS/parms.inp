@@ -54,6 +54,7 @@ start reactions
     bindRadSameCom = 1.1
     area3dto1d = 114
 
+    # Form dimers, but no further polymerization
     P(pp0) + P(pp0) <-> P(pp0!1).P(pp0!1)
     onRate3Dka = 10
     offRatekb = 0.4022
@@ -65,25 +66,27 @@ start reactions
     bindRadSameCom = 2
     area3dto1d = 10
 
-    # P(pp1) + P(pp2) <-> P(pp1!1).P(pp2!1)
-    # onRate3Dka = 16.658190471376497 
-    # offRatekb = 0.6022
-    # norm1 = [0, 0, 1]
-    # norm2 = [0, 0, 1]
-    # sigma = 0.6
-    # assocAngles = [2.863293, 2.863293, -1.570796, 1.570796, 0.000000]
-    # loopcoopfactor = 1
-    # bindRadSameCom = 1.1
-    # area3dto1d = 10
+    # This allows linear growth of P polymers
+    # ka needs to be doubled to account for interface labeling
+    # See NERDSS documentation for details
+    P(pp1) + P(pp2) <-> P(pp1!1).P(pp2!1)
+    onRate3Dka = 16.658190471376497 
+    offRatekb = 0.6022
+    norm1 = [0, 0, 1]
+    norm2 = [0, 0, 1]
+    sigma = 0.6
+    assocAngles = [2.863293, 2.863293, -1.570796, 1.570796, 0.000000]
+    loopcoopfactor = 1
+    bindRadSameCom = 1.1
+    area3dto1d = 10
 
+    # Avoid overlap via excluded volume
     P(ref) + P(ref) -> P(ref!1).P(ref!1)
     onRate3Dka = 0
     norm1 = [0, 0, 1]
     norm2 = [0, 0, 1]
     sigma = 2.00
     assocAngles = [1.570796, 1.570796, -1.570796, 1.570796, 0.000000]
-    loopcoopfactor = 1
-    bindRadSameCom = 2
-    area3dto1d = 10
+
 
 end reactions
