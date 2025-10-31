@@ -1,0 +1,19 @@
+TITLE  PDB TIMESTEP 3100000 CREATED Fri Oct 24 23:34:57 2025
+CRYST1126      50       50       90     90     90      P 1
+ATOM      1 COM    P    1        57.1    25.0    25.9   1.0    16           P
+ATOM      2 dbn    P    1        56.7    24.7    25.8   1.0    16           P
+ATOM      3 dbs    P    1        56.7    24.7    25.8   1.0    16           P
+ATOM      4 dmr    P    1        57.1    25.5    25.9   1.0    16           P
+ATOM      5 ref    P    1        57.1    25.0    25.9   1.0    16           P
+ATOM      6 COM    P    2        59.1    25.0    25.9   1.0    16           P
+ATOM      7 dbn    P    2        58.7    24.7    25.8   1.0    16           P
+ATOM      8 dbs    P    2        58.7    24.7    25.8   1.0    16           P
+ATOM      9 dmr    P    2        59.1    25.5    25.9   1.0    16           P
+ATOM     10 ref    P    2        59.1    25.0    25.9   1.0    16           P
+ATOM     53 COM    N   17        57.0    25.0    25.0   1.0    16           N
+ATOM     54 bs     N   17        57.0    25.1    25.1   1.0    16           N
+ATOM     55 ref    N   17        57.0    25.0    25.0   1.0    16           N
+ATOM    227 COM    S   75        59.1    25.0    25.0   1.0    16           S
+ATOM    228 bs     S   75        59.1    25.1    25.1   1.0    16           S
+ATOM    229 ref    S   75        59.1    25.0    25.0   1.0    16           S
+END

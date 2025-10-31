@@ -229,7 +229,10 @@ def readResT_from_NERDSS(
             currt = rxnInfo[-1]
             # always apply updates so pre-start structure/state is correct,
             # but only record residence/search times for events at/after startT
-            currt = _apply_rxn_update(rxntype, rxnInfo, proteinList, complexList, __add_protein_to_list, __add_newComplex, debug, record=(currt >= startT))
+            currt = _apply_rxn_update(
+                rxntype, rxnInfo, proteinList, complexList, __add_protein_to_list, 
+                __add_newComplex, debug, record=(currt >= startT)
+            )
             if debug and rxntype == 'rxnPRO':
                 pro1, pro1ID, pro2, pro2ID, _, _ = rxnInfo
                 print(pro1ID, 'startT: %.3f'%proteinList[pro1ID].boundStartTime, 'endT: %.3f'%proteinList[pro1ID].boundEndTime)

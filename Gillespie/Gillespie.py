@@ -687,8 +687,6 @@ def main_process(
         if getResT:
             # residence times were calculated during the simulation
             residenceT = GSYS.resTimes
-            print('Number of dissociation events:', len(residenceT))
-            print('# Mean Residence Time \n%.4e'%np.mean(residenceT), flush=True)
         else:
             if saveSize > 0 and saveFileName!='':
                 # binding data was saved to cache
@@ -698,8 +696,22 @@ def main_process(
                 for mol_bound in GSYS.protein_bound:
                     residenceT = residenceT + calc_resT(GSYS.protein_bound[mol_bound], tList, tStart, tEnd)
                 # output
-                print('Number of dissociation events:', len(residenceT))
-                print('# Mean Residence Time \n%.4e'%np.mean(residenceT), flush=True)
+        print('Number of dissociation events:', len(residenceT))
+        print('# Mean Residence Time \n%.4e'%np.mean(residenceT), flush=True)
+        # Run 100 bootstrap samples to estimate the error of mean residence time
+        if len(residenceT) >= 10:
+            boot_means = []
+            n_boot = 100
+            n_data = len(residenceT)
+            for _ in range(n_boot):
+                sample = np.random.choice(residenceT, size=n_data, replace=True)
+                boot_means.append(np.mean(sample))
+            boot_means = np.array(boot_means)
+            mean_resT = np.mean(residenceT)
+            std_resT = np.std(boot_means)
+            print('# Bootstrap (100 resamples): %.4e ± %.4e'%(mean_resT, std_resT), flush=True)
+        else:
+            print('# Not enough dissociation events for bootstrap error estimation.', flush=True)
         
         # calculate survival probability
         if getSurvivalProb == True:
